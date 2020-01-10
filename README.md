@@ -21,7 +21,7 @@ JavaScript Set keeping delta of changes made to it
 [api-docs-url]: https://surol.github.io/delta-set/index.html
 
 
-A `DeltaSet` class inherits ES2015 `Set`. In addition it is keeps changes made to it and has additional methods
+A `DeltaSet` class inherits ES2015 `Set`. In addition it keeps changes made to it and has methods
 to deal with these changes delta.
 
 ```typescript
