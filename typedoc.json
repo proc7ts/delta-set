@@ -1,5 +1,6 @@
 {
   "excludeNotExported": true,
+  "excludePrivate": true,
   "mode": "file",
   "name": "DeltaSet",
   "out": "./target/typedoc",
