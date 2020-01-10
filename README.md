@@ -32,7 +32,7 @@ import { DeltaSet } from 'delta-set';
 const deltaSet = new DeltaSet([1, 2, 3]); // [1, 2, 3]
 
 // Remove element and record its removal
-deltaSet.remove(2); // [1, 3]
+deltaSet.delete(2); // [1, 3]
 
 // Add element and record its addition
 deltaSet.add(4); // [1, 3, 4]
