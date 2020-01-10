@@ -50,14 +50,14 @@ deltaSet.redelta((add, remove) => console.log('added:', ...add, '; removed:', ..
 deltaSet.undelta();
 
 // Apply more changes
-deltaSet.delta(/* add */ [11, 12], /* remove */ [4]); // [1, 2, 11, 12]
+deltaSet.delta(/* add */ [11, 12], /* remove */ [4]); // [1, 3, 11, 12]
 
 // Replay last changes in another set
-deltaSet.redelta(otherSet); // otherSet: [1, 2, 11, 12]
+deltaSet.redelta(otherSet); // otherSet: [1, 3, 11, 12]
 
 // Remove all elements and record their removal
 deltaSet.clear();
 
 deltaSet.redelta((add, remove) => console.log('added:', ...add, '; removed:', ...remove));
-// Logs: added: ; removed: 1 2 11 12 
+// Logs: added: ; removed: 1 3 11 12 
 ```
