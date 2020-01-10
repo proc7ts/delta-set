@@ -18,4 +18,4 @@ JavaScript Set keeping delta of changes made to it
 [github-image]: https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational
 [github-url]: https://github.com/surol/delta-set
 [api-docs-image]: https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational
-[api-docs-url]: https://surol.github.io/delta-set/
+[api-docs-url]: https://surol.github.io/delta-set/index.html
