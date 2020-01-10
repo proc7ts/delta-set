@@ -59,5 +59,5 @@ deltaSet.redelta(otherSet); // otherSet: [1, 3, 11, 12]
 deltaSet.clear();
 
 deltaSet.redelta((add, remove) => console.log('added:', ...add, '; removed:', ...remove));
-// Logs: added: ; removed: 1 3 11 12 
+// Logs: added: ; removed: 4 1 3 11 12 
 ```
