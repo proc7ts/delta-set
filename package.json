@@ -1,7 +1,7 @@
 {
   "name": "delta-set",
   "version": "1.0.0",
-  "description": "A Set keeping delta of changes made to it",
+  "description": "JavaScript Set keeping delta of changes made to it",
   "keywords": [
     "delta",
     "set"
