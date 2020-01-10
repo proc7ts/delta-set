@@ -141,6 +141,10 @@ export namespace DeltaSet {
    * @typeparam T  A type of elements of delta set.
    */
   export type DeltaReceiverFunction<T> =
+  /**
+   * @param added  An iterable iterator of added elements.
+   * @param removed  An iterable iterator of removed elements.
+   */
       (this: void, added: IterableIterator<T>, remove: IterableIterator<T>) => void;
 
   /**
