@@ -102,7 +102,7 @@ export class DeltaSet<T> extends Set<T> {
 
     const receive = typeof receiver === 'function' ? receiver : deltaSetDeltaReceiver(receiver);
 
-    receive(this._added.values(), this._removed.values());
+    receive([...this._added], [...this._removed]);
 
     return this;
   }
@@ -142,10 +142,10 @@ export namespace DeltaSet {
    */
   export type DeltaReceiverFunction<T> =
   /**
-   * @param added  An iterable iterator of added elements.
-   * @param removed  An iterable iterator of removed elements.
+   * @param added  An array of added elements.
+   * @param removed  An array of removed elements.
    */
-      (this: void, added: IterableIterator<T>, remove: IterableIterator<T>) => void;
+      (this: void, added: T[], remove: T[]) => void;
 
   /**
    * A delta set changes receiver object.

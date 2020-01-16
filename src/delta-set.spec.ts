@@ -141,12 +141,12 @@ describe('redelta', () => {
 
 function deltaOf<T>(set: DeltaSet<T>): [T[], T[]] {
 
-  const added: T[] = [];
-  const removed: T[] = [];
+  let added: T[] = [];
+  let removed: T[] = [];
 
   set.redelta((add, remove) => {
-    added.push(...add);
-    removed.push(...remove);
+    added = add;
+    removed = remove;
   });
 
   return [added, removed];
