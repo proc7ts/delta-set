@@ -102,7 +102,7 @@ export class DeltaSet<T> extends Set<T> {
 
     const receive = typeof receiver === 'function' ? receiver : deltaSetDeltaReceiver(receiver);
 
-    receive([...this._added], [...this._removed]);
+    receive(Array.from(this._added), Array.from(this._removed));
 
     return this;
   }
