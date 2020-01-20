@@ -178,7 +178,7 @@ export namespace DeltaSet {
  * @internal
  */
 function deltaSetDeltaReceiver<T>(
-    receiver: { add(value: T): void; delete(value: T): void; },
+    receiver: DeltaSet.DeltaReceiverObject<T>,
 ): (this: void, add: Iterable<T>, remove: Iterable<T>) => void {
   return (add, remove) => {
     for (const removed of remove) {
