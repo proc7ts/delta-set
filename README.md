@@ -9,23 +9,23 @@ DeltaSet
 
 JavaScript Set keeping delta of changes made to it
 
-[npm-image]: https://img.shields.io/npm/v/delta-set.svg?logo=npm
-[npm-url]: https://www.npmjs.com/package/delta-set
-[ci-image]: https://img.shields.io/circleci/build/github/surol/delta-set?logo=circleci
-[ci-url]: https://circleci.com/gh/surol/delta-set
-[codecov-image]: https://codecov.io/gh/surol/delta-set/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/surol/delta-set
+[npm-image]: https://img.shields.io/npm/v/@proc7ts/delta-set.svg?logo=npm
+[npm-url]: https://www.npmjs.com/package/@proc7ts/delta-set
+[ci-image]: https://img.shields.io/circleci/build/github/proc7ts/delta-set?logo=circleci
+[ci-url]: https://circleci.com/gh/proc7ts/delta-set
+[codecov-image]: https://codecov.io/gh/proc7ts/delta-set/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/proc7ts/delta-set
 [github-image]: https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational
-[github-url]: https://github.com/surol/delta-set
+[github-url]: https://github.com/proc7ts/delta-set
 [api-docs-image]: https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational
-[api-docs-url]: https://surol.github.io/delta-set/index.html
+[api-docs-url]: https://proc7ts.github.io/delta-set/index.html
 
 
 A `DeltaSet` class inherits ES2015 `Set`. In addition it keeps changes made to it and has methods
 to deal with these changes delta.
 
 ```typescript
-import { DeltaSet } from 'delta-set';
+import { DeltaSet } from '@proc7ts/delta-set';
 
 // Construct a delta set containing specified elements
 // and record their addition. 
