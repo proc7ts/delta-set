@@ -21,7 +21,7 @@ module.exports = {
     [
       'jest-junit',
       {
-        suiteName: 'delta-set',
+        suiteName: '@proc7ts/delta-set',
         outputDirectory: './target/test-results',
         classNameTemplate: '{classname}: {title}',
         titleTemplate: '{classname}: {title}',

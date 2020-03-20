@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module delta-set
+ * @module @proc7ts/delta-set
  */
 /**
  * A `Set` implementation that keeps a delta of changes made to it.
