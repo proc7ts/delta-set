@@ -2,12 +2,14 @@
  * @packageDocumentation
  * @module @proc7ts/delta-set
  */
+import { ReadonlyDeltaSet } from './readonly-delta-set';
+
 /**
  * A `Set` implementation that keeps a delta of changes made to it.
  *
  * @typeparam T  A type of elements of delta set.
  */
-export class DeltaSet<T> extends Set<T> {
+export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
 
   /** @internal */
   private readonly _added: Set<T>;
@@ -93,7 +95,7 @@ export class DeltaSet<T> extends Set<T> {
   }
 
   /**
-   * Replays changes made to this set in target receiver.
+   * Replays the changes made to this set in target receiver.
    *
    * @param receiver  A receiver of changes delta. E.g. another `Set`.
    *
