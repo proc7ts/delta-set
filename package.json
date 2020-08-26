@@ -19,6 +19,12 @@
   "main": "dist/delta-set.js",
   "module": "dist/delta-set.mjs",
   "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/delta-set.mjs",
+      "require": "./dist/delta-set.js"
+    }
+  },
   "devDependencies": {
     "@proc7ts/eslint-config": "^2.0.4",
     "@rollup/plugin-commonjs": "^15.0.0",
