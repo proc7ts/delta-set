@@ -73,7 +73,7 @@
 				<p>JavaScript Set keeping delta of changes made to it</p>
 				<p>A <code>DeltaSet</code> class inherits ES2015 <code>Set</code>. In addition, it keeps changes made to it and has methods
 				to deal with these changes&#39; delta.</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DeltaSet } <span class="hljs-keyword">from</span> <span class="hljs-string">'@proc7ts/delta-set'</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DeltaSet } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@proc7ts/delta-set&#x27;</span>;
 
 <span class="hljs-comment">// Construct a delta set containing specified elements</span>
 <span class="hljs-comment">// and record their addition. </span>
@@ -85,13 +85,13 @@ deltaSet.delete(<span class="hljs-number">2</span>); <span class="hljs-comment">
 <span class="hljs-comment">// Add element and record its addition</span>
 deltaSet.add(<span class="hljs-number">4</span>); <span class="hljs-comment">// [1, 3, 4]</span>
 
-<span class="hljs-keyword">const</span> otherSet = <span class="hljs-keyword">new</span> Set&lt;<span class="hljs-built_in">number</span>&gt;();
+<span class="hljs-keyword">const</span> otherSet = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>&lt;<span class="hljs-built_in">number</span>&gt;();
 
 <span class="hljs-comment">// Replay changes in another set</span>
 deltaSet.redelta(otherSet); <span class="hljs-comment">// otherSet: [1, 3, 4]</span>
 
 <span class="hljs-comment">// Changes may be reported to receiver function</span>
-deltaSet.redelta(<span class="hljs-function">(<span class="hljs-params">add, remove</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'added:'</span>, ...add, <span class="hljs-string">'; removed:'</span>, ...remove));
+deltaSet.redelta(<span class="hljs-function">(<span class="hljs-params">add, remove</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;added:&#x27;</span>, ...add, <span class="hljs-string">&#x27;; removed:&#x27;</span>, ...remove));
 <span class="hljs-comment">// Logs: added: 1 3 4 ; removed: 2</span>
 
 <span class="hljs-comment">// Forget about changes made to delta set</span>
@@ -106,7 +106,7 @@ deltaSet.redelta(otherSet); <span class="hljs-comment">// otherSet: [1, 3, 11, 1
 <span class="hljs-comment">// Remove all elements and record their removal</span>
 deltaSet.clear();
 
-deltaSet.redelta(<span class="hljs-function">(<span class="hljs-params">add, remove</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'added:'</span>, ...add, <span class="hljs-string">'; removed:'</span>, ...remove));
+deltaSet.redelta(<span class="hljs-function">(<span class="hljs-params">add, remove</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;added:&#x27;</span>, ...add, <span class="hljs-string">&#x27;; removed:&#x27;</span>, ...remove));
 <span class="hljs-comment">// Logs: added: ; removed: 4 1 3 11 12 </span></code></pre>
 			</div>
 		</div>
@@ -157,6 +157,5 @@ deltaSet.redelta(<span class="hljs-function">(<span class="hljs-params">add, rem
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
