@@ -16,13 +16,14 @@
   "bugs": {
     "url": "https://github.com/proc7ts/delta-set/issues"
   },
-  "main": "dist/delta-set.js",
-  "module": "dist/delta-set.mjs",
+  "type": "module",
+  "main": "dist/delta-set.cjs",
+  "module": "dist/delta-set.js",
   "types": "index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/delta-set.mjs",
-      "require": "./dist/delta-set.js"
+      "import": "./dist/delta-set.js",
+      "require": "./dist/delta-set.cjs"
     }
   },
   "devDependencies": {
