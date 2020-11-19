@@ -2,12 +2,12 @@
  * @packageDocumentation
  * @module @proc7ts/delta-set
  */
-import { ReadonlyDeltaSet } from './readonly-delta-set';
+import type { ReadonlyDeltaSet } from './readonly-delta-set';
 
 /**
  * A `Set` implementation that keeps a delta of changes made to it.
  *
- * @typeparam T  A type of elements of delta set.
+ * @typeParam T  A type of elements of delta set.
  */
 export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
 
@@ -105,7 +105,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
 
     const receive = typeof receiver === 'function' ? receiver : deltaSetDeltaReceiver(receiver);
 
-    receive(Array.from(this._added), Array.from(this._removed));
+    receive([...this._added], [...this._removed]);
 
     return this;
   }
@@ -132,7 +132,7 @@ export namespace DeltaSet {
    *
    * This can be either an {@link DeltaReceiverObject object}, or a {@link DeltaReceiverFunction function}.
    *
-   * @typeparam T  A type of elements of delta set.
+   * @typeParam T  A type of elements of delta set.
    */
   export type DeltaReceiver<T> =
       | DeltaReceiverFunction<T>
@@ -141,21 +141,21 @@ export namespace DeltaSet {
   /**
    * A delta set changes receiver function.
    *
-   * @typeparam T  A type of elements of delta set.
+   * @typeParam T  A type of elements of delta set.
    */
   export type DeltaReceiverFunction<T> =
   /**
    * @param added  An array of added elements.
    * @param removed  An array of removed elements.
    */
-      (this: void, added: T[], remove: T[]) => void;
+      (this: void, added: T[], removed: T[]) => void;
 
   /**
    * A delta set changes receiver object.
    *
    * A `Set` class implements this interface.
    *
-   * @typeparam T  A type of elements of delta set.
+   * @typeParam T  A type of elements of delta set.
    */
   export interface DeltaReceiverObject<T> {
 

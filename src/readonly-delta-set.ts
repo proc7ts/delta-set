@@ -2,12 +2,12 @@
  * @packageDocumentation
  * @module @proc7ts/delta-set
  */
-import { DeltaSet } from './delta-set';
+import type { DeltaSet } from './delta-set';
 
 /**
  * Read-only view of `Set` that represents a delta of changes made to original set.
  *
- * @typeparam T  A type of elements of delta set.
+ * @typeParam T  A type of elements of delta set.
  */
 export interface ReadonlyDeltaSet<T> extends ReadonlySet<T> {
 
