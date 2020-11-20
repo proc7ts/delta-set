@@ -162,7 +162,7 @@
 					<div class="tsd-signature tsd-kind-icon">Delta<wbr>Receiver&lt;T&gt;<span class="tsd-signature-symbol">:</span> <a href="DeltaSet.html#DeltaReceiverFunction" class="tsd-signature-type">DeltaReceiverFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/DeltaSet.DeltaReceiverObject.html" class="tsd-signature-type">DeltaReceiverObject</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L137">proc7ts/delta-set/src/delta-set.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L137">proc7ts/delta-set/src/delta-set.ts:137</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -186,10 +186,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
 					<a name="DeltaReceiverFunction" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> Delta<wbr>Receiver<wbr>Function</h3>
-					<div class="tsd-signature tsd-kind-icon">Delta<wbr>Receiver<wbr>Function&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>this<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span>, added<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<div class="tsd-signature tsd-kind-icon">Delta<wbr>Receiver<wbr>Function&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>this<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span>, added<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, removed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L146">proc7ts/delta-set/src/delta-set.ts:146</a></li>
+							<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L146">proc7ts/delta-set/src/delta-set.ts:146</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -213,7 +213,7 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-signature">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>this<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span>, added<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>this<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span>, added<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, removed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -233,7 +233,12 @@
 												</div>
 											</li>
 											<li>
-												<h5>remove: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+												<h5>removed: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+												<div class="tsd-comment tsd-typography">
+													<div class="lead">
+														<p>An array of removed elements.</p>
+													</div>
+												</div>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -256,7 +261,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L18">proc7ts/delta-set/src/delta-set.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L18">proc7ts/delta-set/src/delta-set.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -289,7 +294,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="DeltaSet.html">DeltaSet</a>.<a href="DeltaSet.html#_Symbol_toStringTag_">[Symbol.toStringTag]</a></p>
 						<ul>
-							<li>Defined in node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:138</li>
+							<li>Defined in node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:143</li>
 						</ul>
 					</aside>
 				</section>
@@ -353,7 +358,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Set.add</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L42">proc7ts/delta-set/src/delta-set.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L42">proc7ts/delta-set/src/delta-set.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -388,7 +393,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Set.clear</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L74">proc7ts/delta-set/src/delta-set.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L74">proc7ts/delta-set/src/delta-set.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -412,7 +417,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Set.delete</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L60">proc7ts/delta-set/src/delta-set.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L60">proc7ts/delta-set/src/delta-set.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -445,7 +450,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L92">proc7ts/delta-set/src/delta-set.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L92">proc7ts/delta-set/src/delta-set.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -592,7 +597,7 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Despite its name, returns an iterable of the values in the set,</p>
+									<p>Despite its name, returns an iterable of the values in the set.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -610,7 +615,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/ReadonlyDeltaSet.html">ReadonlyDeltaSet</a>.<a href="../interfaces/ReadonlyDeltaSet.html#redelta">redelta</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L104">proc7ts/delta-set/src/delta-set.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L104">proc7ts/delta-set/src/delta-set.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -642,7 +647,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/9df9a1d/src/delta-set.ts#L120">proc7ts/delta-set/src/delta-set.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/delta-set/blob/0887a5f/src/delta-set.ts#L120">proc7ts/delta-set/src/delta-set.ts:120</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
