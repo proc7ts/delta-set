@@ -14,13 +14,7 @@ export default {
     ts({
       typescript,
       tsconfig: 'tsconfig.main.json',
-      hook: {
-        outputPath(path, kind) {
-          if (kind === 'declaration') {
-            return './index.d.ts';
-          }
-        },
-      },
+      cacheRoot: 'target/.rts2_cache',
     }),
     nodeResolve(),
     sourcemaps(),
