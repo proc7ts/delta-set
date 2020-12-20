@@ -7,7 +7,7 @@ import type { ReadonlyDeltaSet } from './readonly-delta-set';
 /**
  * A `Set` implementation that keeps a delta of changes made to it.
  *
- * @typeParam T  A type of elements of delta set.
+ * @typeParam T - A type of elements of delta set.
  */
 export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
 
@@ -20,7 +20,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
   /**
    * Constructs new delta set.
    *
-   * @param values  An iterable of elements be add to constructed delta set. Or `null` to add nothing.
+   * @param values - An iterable of elements be add to constructed delta set. Or `null` to add nothing.
    */
   constructor(values?: Iterable<T> | null) {
     super();
@@ -35,7 +35,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    *
    * Records element addition and forgets its removal unless the set contains it already.
    *
-   * @param value  The value of the element to add.
+   * @param value - The value of the element to add.
    *
    * @returns `this` delta set.
    */
@@ -53,7 +53,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    *
    * Records element removal and forgets its addition if removal succeed.
    *
-   * @param value  The value of the element to remove.
+   * @param value - The value of the element to remove.
    *
    * @returns `true` if element removed successfully; or `false` if this set did not contain the element.
    */
@@ -84,8 +84,8 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    *
    * Records all changes made.
    *
-   * @param add  An iterable of elements to add.
-   * @param remove  An iterable of elements to remove.
+   * @param add - An iterable of elements to add.
+   * @param remove - An iterable of elements to remove.
    *
    * @returns `this` delta set.
    */
@@ -97,7 +97,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
   /**
    * Replays the changes made to this set in target receiver.
    *
-   * @param receiver  A receiver of changes delta. E.g. another `Set`.
+   * @param receiver - A receiver of changes delta. E.g. another `Set`.
    *
    * @returns `this` delta set.
    */
@@ -132,7 +132,7 @@ export namespace DeltaSet {
    *
    * This can be either an {@link DeltaReceiverObject object}, or a {@link DeltaReceiverFunction function}.
    *
-   * @typeParam T  A type of elements of delta set.
+   * @typeParam T - A type of elements of delta set.
    */
   export type DeltaReceiver<T> =
       | DeltaReceiverFunction<T>
@@ -141,12 +141,12 @@ export namespace DeltaSet {
   /**
    * A delta set changes receiver function.
    *
-   * @typeParam T  A type of elements of delta set.
+   * @typeParam T - A type of elements of delta set.
    */
   export type DeltaReceiverFunction<T> =
   /**
-   * @param added  An array of added elements.
-   * @param removed  An array of removed elements.
+   * @param added - An array of added elements.
+   * @param removed - An array of removed elements.
    */
       (this: void, added: T[], removed: T[]) => void;
 
@@ -155,21 +155,21 @@ export namespace DeltaSet {
    *
    * A `Set` class implements this interface.
    *
-   * @typeParam T  A type of elements of delta set.
+   * @typeParam T - A type of elements of delta set.
    */
   export interface DeltaReceiverObject<T> {
 
     /**
      * Receives an element that has been added to delta set.
      *
-     * @param value  The value of the added element.
+     * @param value - The value of the added element.
      */
     add(value: T): void;
 
     /**
      * Receives an element that has been remove from delta set.
      *
-     * @param value  The value of the removed element.
+     * @param value - The value of the removed element.
      */
     delete(value: T): void;
 
