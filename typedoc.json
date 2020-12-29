@@ -1,8 +1,5 @@
 {
-  "disableAutoModuleName": true,
-  "excludeNotExported": true,
-  "excludePrivate": true,
-  "mode": "file",
+  "entryPoints": ["src/index.ts"],
   "name": "DeltaSet",
   "out": "./target/typedoc",
   "tsconfig": "tsconfig.main.json"
