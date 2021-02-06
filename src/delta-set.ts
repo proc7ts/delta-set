@@ -1,7 +1,3 @@
-/**
- * @packageDocumentation
- * @module @proc7ts/delta-set
- */
 import type { ReadonlyDeltaSet } from './readonly-delta-set';
 
 /**
