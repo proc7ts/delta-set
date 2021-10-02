@@ -41,6 +41,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
       this._removed.delete(value);
       super.add(value);
     }
+
     return this;
   }
 
@@ -57,8 +58,10 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
     if (super.delete(value)) {
       this._added.delete(value);
       this._removed.add(value);
+
       return true;
     }
+
     return false;
   }
 
@@ -87,6 +90,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    */
   delta(add: Iterable<T>, remove: Iterable<T> = []): this {
     deltaSetDeltaReceiver(this)(add, remove);
+
     return this;
   }
 
@@ -116,6 +120,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
   undelta(): this {
     this._added.clear();
     this._removed.clear();
+
     return this;
   }
 
