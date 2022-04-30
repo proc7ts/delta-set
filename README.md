@@ -1,5 +1,4 @@
-DeltaSet 
-========
+# DeltaSet
 
 [![NPM][npm-image]][npm-url]
 [![Build Status][build-status-img]][build-status-link]
@@ -23,7 +22,6 @@ JavaScript Set keeping delta of changes made to it
 [api-docs-image]: https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational
 [api-docs-url]: https://proc7ts.github.io/delta-set/index.html
 
-
 A `DeltaSet` class inherits ES2015 `Set`. In addition, it keeps changes made to it and has methods
 to deal with these changes' delta.
 
@@ -31,7 +29,7 @@ to deal with these changes' delta.
 import { DeltaSet } from '@proc7ts/delta-set';
 
 // Construct a delta set containing specified elements
-// and record their addition. 
+// and record their addition.
 const deltaSet = new DeltaSet([1, 2, 3]); // [1, 2, 3]
 
 // Remove element and record its removal
@@ -62,5 +60,5 @@ deltaSet.redelta(otherSet); // otherSet: [1, 3, 11, 12]
 deltaSet.clear();
 
 deltaSet.redelta((add, remove) => console.log('added:', ...add, '; removed:', ...remove));
-// Logs: added: ; removed: 4 1 3 11 12 
+// Logs: added: ; removed: 4 1 3 11 12
 ```
