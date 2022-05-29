@@ -1,4 +1,4 @@
-import type { DeltaSet } from './delta-set';
+import type { DeltaSet } from './delta-set.js';
 
 /**
  * Read-only view of `Set` that represents a delta of changes made to original set.

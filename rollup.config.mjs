@@ -6,7 +6,7 @@ import typescript from 'typescript';
 
 export default defineConfig({
   input: {
-    'delta-set': './src/index.ts',
+    'delta-set': './src/mod.ts',
   },
   plugins: [
     ts({
