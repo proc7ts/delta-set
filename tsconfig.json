@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "moduleResolution": "Node",
+    "moduleResolution": "Node16",
     "module": "ES2015",
-    "target": "ES2019",
+    "target": "ES2022",
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -10,9 +10,8 @@
     "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "importsNotUsedAsValues": "error",
     "noEmitHelpers": true,
-    "lib": ["ES2019"],
+    "lib": ["ES2022"],
     "types": [],
     "outDir": "target/js",
     "sourceMap": true,

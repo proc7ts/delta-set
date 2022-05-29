@@ -1,4 +1,4 @@
-import type { ReadonlyDeltaSet } from './readonly-delta-set';
+import type { ReadonlyDeltaSet } from './readonly-delta-set.js';
 
 /**
  * A `Set` implementation that keeps a delta of changes made to it.
@@ -7,22 +7,19 @@ import type { ReadonlyDeltaSet } from './readonly-delta-set';
  */
 export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
 
-  /** @internal */
-  private readonly _added: Set<T>;
-
-  /** @internal */
-  private readonly _removed: Set<T>;
+  readonly #added: Set<T>;
+  readonly #removed: Set<T>;
 
   /**
    * Constructs new delta set.
    *
-   * @param values - An iterable of elements be add to constructed delta set. Or `null` to add nothing.
+   * @param values - An iterable of elements be added to constructed delta set. Or `null` to add nothing.
    */
   constructor(values?: Iterable<T> | null) {
     super();
-    this._added = new Set<T>(values);
-    this._removed = new Set<T>();
-    this._added.forEach(value => this.add(value));
+    this.#added = new Set<T>(values);
+    this.#removed = new Set<T>();
+    this.#added.forEach(value => this.add(value));
   }
 
   /**
@@ -37,8 +34,8 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    */
   add(value: T): this {
     if (!this.has(value)) {
-      this._added.add(value);
-      this._removed.delete(value);
+      this.#added.add(value);
+      this.#removed.delete(value);
       super.add(value);
     }
 
@@ -56,8 +53,8 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    */
   delete(value: T): boolean {
     if (super.delete(value)) {
-      this._added.delete(value);
-      this._removed.add(value);
+      this.#added.delete(value);
+      this.#removed.add(value);
 
       return true;
     }
@@ -71,8 +68,8 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    * Records all elements removal and forgets all elements additions.
    */
   clear(): void {
-    this._added.clear();
-    this.forEach(value => this._removed.add(value));
+    this.#added.clear();
+    this.forEach(value => this.#removed.add(value));
     super.clear();
   }
 
@@ -89,7 +86,7 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    * @returns `this` delta set.
    */
   delta(add: Iterable<T>, remove: Iterable<T> = []): this {
-    deltaSetDeltaReceiver(this)(add, remove);
+    DeltaSet$DeltaReceiver(this)(add, remove);
 
     return this;
   }
@@ -103,9 +100,9 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    */
   redelta(receiver: DeltaSet.DeltaReceiver<T>): this {
 
-    const receive = typeof receiver === 'function' ? receiver : deltaSetDeltaReceiver(receiver);
+    const receive = typeof receiver === 'function' ? receiver : DeltaSet$DeltaReceiver(receiver);
 
-    receive([...this._added], [...this._removed]);
+    receive([...this.#added], [...this.#removed]);
 
     return this;
   }
@@ -118,8 +115,8 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    * @returns `this` delta set.
    */
   undelta(): this {
-    this._added.clear();
-    this._removed.clear();
+    this.#added.clear();
+    this.#removed.clear();
 
     return this;
   }
@@ -143,13 +140,10 @@ export namespace DeltaSet {
    * A delta set changes receiver function.
    *
    * @typeParam T - A type of elements of delta set.
-   */
-  export type DeltaReceiverFunction<T> =
-  /**
    * @param added - An array of added elements.
    * @param removed - An array of removed elements.
    */
-      (this: void, added: T[], removed: T[]) => void;
+  export type DeltaReceiverFunction<T> = (this: void, added: T[], removed: T[]) => void;
 
   /**
    * A delta set changes receiver object.
@@ -181,7 +175,7 @@ export namespace DeltaSet {
 /**
  * @internal
  */
-function deltaSetDeltaReceiver<T>(
+function DeltaSet$DeltaReceiver<T>(
     receiver: DeltaSet.DeltaReceiverObject<T>,
 ): (this: void, add: Iterable<T>, remove: Iterable<T>) => void {
   return (add, remove) => {
