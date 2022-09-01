@@ -1,11 +1,7 @@
 export default {
   preset: 'ts-jest/presets/default-esm',
   collectCoverage: true,
-  collectCoverageFrom: [
-    'src/**/*.ts',
-    '!src/**/*.spec.ts',
-    '!**/node_modules/**',
-  ],
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.spec.ts', '!**/node_modules/**'],
   coverageDirectory: 'target/coverage',
   coverageThreshold: {
     global: {

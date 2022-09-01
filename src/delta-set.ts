@@ -99,7 +99,6 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
    * @returns `this` delta set.
    */
   redelta(receiver: DeltaSet.DeltaReceiver<T>): this {
-
     const receive = typeof receiver === 'function' ? receiver : DeltaSet$DeltaReceiver(receiver);
 
     receive([...this.#added], [...this.#removed]);
@@ -124,7 +123,6 @@ export class DeltaSet<T> extends Set<T> implements ReadonlyDeltaSet<T> {
 }
 
 export namespace DeltaSet {
-
   /**
    * A delta set changes receiver.
    *
@@ -132,9 +130,7 @@ export namespace DeltaSet {
    *
    * @typeParam T - A type of elements of delta set.
    */
-  export type DeltaReceiver<T> =
-      | DeltaReceiverFunction<T>
-      | DeltaReceiverObject<T>;
+  export type DeltaReceiver<T> = DeltaReceiverFunction<T> | DeltaReceiverObject<T>;
 
   /**
    * A delta set changes receiver function.
@@ -153,7 +149,6 @@ export namespace DeltaSet {
    * @typeParam T - A type of elements of delta set.
    */
   export interface DeltaReceiverObject<T> {
-
     /**
      * Receives an element that has been added to delta set.
      *
@@ -167,16 +162,14 @@ export namespace DeltaSet {
      * @param value - The value of the removed element.
      */
     delete(value: T): void;
-
   }
-
 }
 
 /**
  * @internal
  */
 function DeltaSet$DeltaReceiver<T>(
-    receiver: DeltaSet.DeltaReceiverObject<T>,
+  receiver: DeltaSet.DeltaReceiverObject<T>,
 ): (this: void, add: Iterable<T>, remove: Iterable<T>) => void {
   return (add, remove) => {
     for (const removed of remove) {

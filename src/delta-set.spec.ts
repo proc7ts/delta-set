@@ -3,14 +3,12 @@ import { DeltaSet } from './delta-set.js';
 
 describe('constructor', () => {
   it('constructs empty set without parameters', () => {
-
     const set = new DeltaSet();
 
     expect(set.size).toBe(0);
     expect(deltaOf(set)).toEqual([[], []]);
   });
   it('constructs a set of provided given elements', () => {
-
     const elements = [1, 2, 3];
     const set = new DeltaSet(elements);
 
@@ -20,7 +18,6 @@ describe('constructor', () => {
 });
 
 describe('add', () => {
-
   let set: DeltaSet<number>;
 
   beforeEach(() => {
@@ -47,7 +44,6 @@ describe('add', () => {
 });
 
 describe('delete', () => {
-
   let set: DeltaSet<number>;
 
   beforeEach(() => {
@@ -67,7 +63,6 @@ describe('delete', () => {
 });
 
 describe('clear', () => {
-
   let set: DeltaSet<number>;
 
   beforeEach(() => {
@@ -82,7 +77,6 @@ describe('clear', () => {
 });
 
 describe('delta', () => {
-
   let set: DeltaSet<number>;
 
   beforeEach(() => {
@@ -107,7 +101,6 @@ describe('delta', () => {
 });
 
 describe('undelta', () => {
-
   let set: DeltaSet<number>;
 
   beforeEach(() => {
@@ -123,7 +116,6 @@ describe('undelta', () => {
 });
 
 describe('redelta', () => {
-
   let set: DeltaSet<number>;
 
   beforeEach(() => {
@@ -132,7 +124,6 @@ describe('redelta', () => {
   });
 
   it('replays changes in another set', () => {
-
     const target = new Set([2, 5]);
 
     expect(set.redelta(target)).toBe(set);
@@ -141,7 +132,6 @@ describe('redelta', () => {
 });
 
 function deltaOf<T>(set: DeltaSet<T>): [T[], T[]] {
-
   let added: T[] = [];
   let removed: T[] = [];
 
