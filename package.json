@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.0.1",
-    "@run-z/eslint-config": "^3.2.1",
+    "@run-z/eslint-config": "^3.2.2",
     "@types/node": "^16.11.56",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
