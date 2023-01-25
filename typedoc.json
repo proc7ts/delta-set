@@ -1,6 +1,5 @@
 {
   "entryPoints": ["src/mod.ts"],
   "name": "DeltaSet",
-  "out": "./target/typedoc",
-  "tsconfig": "tsconfig.main.json"
+  "out": "./target/typedoc"
 }

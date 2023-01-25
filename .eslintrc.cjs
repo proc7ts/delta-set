@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  ignorePatterns: ['dist/', 'target/', 'd.ts/', '*.d.ts'],
+  ignorePatterns: ['dist/', 'target/'],
   extends: ['@run-z'],
   overrides: [
     {
@@ -23,7 +23,7 @@ module.exports = {
       extends: ['@run-z/eslint-config/jest'],
       parserOptions: {
         tsconfigRootDir: __dirname,
-        project: './tsconfig.spec.json',
+        project: './tsconfig.json',
       },
     },
   ],
