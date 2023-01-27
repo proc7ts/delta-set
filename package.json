@@ -1,6 +1,6 @@
 {
   "name": "@proc7ts/delta-set",
-  "version": "2.0.0-pre.0",
+  "version": "2.0.0",
   "description": "JavaScript Set keeping delta of changes made to it",
   "keywords": [
     "delta",
