@@ -22,6 +22,7 @@
     "types": "./dist/delta-set.d.ts",
     "default": "./dist/delta-set.js"
   },
+  "sideEffects": false,
   "devDependencies": {
     "@jest/globals": "^29.5.0",
     "@run-z/eslint-config": "^3.3.1",
